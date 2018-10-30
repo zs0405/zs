@@ -1,0 +1,28 @@
+@import "_minix.scss";
+@import "common.scss";
+.box {
+    width: 100%;
+    height: 100%;
+    @include box_flex;
+    @include direction(column);
+    .top {
+        width: 100%;
+        height: pxTorem(50px);
+        @include box_flex;
+        @include direction(row);
+        border-bottom: 1px solid #ccc;
+        .ul {
+            @include box_flex;
+            @include direction(row);
+            li {
+                width: pxTorem(70px);
+                line-height: pxTorem(50px);
+                text-align: center;
+            }
+        }
+    }
+}
+
+.red {
+    border-bottom: 2px solid #f00;
+}
