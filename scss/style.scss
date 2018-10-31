@@ -21,46 +21,112 @@
             }
         }
     }
-    .swipers {
-        width: 100%;
-        height: pxTorem(200px);
-        .container {
+    .content {
+        @include flex;
+        @include box_flex;
+        @include direction(column);
+        .swipers {
             width: 100%;
-            height: 100%;
-            .wrapper {
+            height: pxTorem(200px);
+            .container {
                 width: 100%;
                 height: 100%;
-                .slide {
+                .wrapper {
                     width: 100%;
                     height: 100%;
-                    @include box_flex;
-                    @include direction(row);
-                    @include justify(space-between);
-                    dl {
-                        width: 33.3%;
+                    .slide {
+                        width: 100%;
                         height: 100%;
-                        dt {
-                            width: 100%;
-                            img {
+                        @include box_flex;
+                        @include direction(row);
+                        @include justify(space-between);
+                        dl {
+                            width: 33.3%;
+                            height: 100%;
+                            dt {
                                 width: 100%;
-                                height: pxTorem(150px);
+                                img {
+                                    width: 100%;
+                                    height: pxTorem(150px);
+                                }
                             }
-                        }
-                        dd {
-                            width: 100%;
-                            line-height: pxTorem(50px);
-                            text-align: center;
+                            dd {
+                                width: 100%;
+                                line-height: pxTorem(50px);
+                                text-align: center;
+                            }
                         }
                     }
                 }
             }
         }
+        .con {
+            @include flex;
+            @include box_flex;
+            @include direction(column);
+            h2 {
+                width: 100%;
+                line-height: pxTorem(30px);
+                text-align: center;
+            }
+            .dl {
+                @include box_flex;
+                @include direction(row);
+                @include flexWrap(wrap);
+                overflow: auto;
+            }
+            dl {
+                width: 48%;
+                height: pxTorem(240px);
+                border: 1px solid #ccc;
+                @include box_flex;
+                @include direction(column);
+                margin-right: pxTorem(5px);
+                dt {
+                    width: 100%;
+                    img {
+                        width: 95%;
+                        margin-left: pxTorem(4px);
+                        height: pxTorem(190px);
+                    }
+                }
+                dd {
+                    width: 100%;
+                    p {
+                        width: 100%;
+                    }
+                }
+            }
+        }
     }
-    .con {
-        @include flex;
+    .footer {
+        width: 100%;
+        height: pxTorem(60px);
+        @include box_flex;
+        @include direction(row);
+        font-size: pxTorem(16px);
+        @include align(center);
+        text-align: center;
+        dl {
+            @include flex;
+            dt {
+                i {
+                    font-size: pxTorem(20px);
+                }
+            }
+            dd {
+                line-height: pxTorem(20px);
+            }
+        }
     }
 }
 
 .red {
     border-bottom: 2px solid #f00;
+}
+
+.cRed {
+    color: #f00;
+    font-weight: bold;
+    font-size: pxTorem(14px);
 }
